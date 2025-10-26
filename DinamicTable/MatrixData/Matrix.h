@@ -9,8 +9,6 @@ class Matrix{
 public:
     explicit Matrix(int rows, int columns){
 
-
-
         if (rows <= 0 || columns <= 0){
             this->rows = 1;
             this->columns = 1;
@@ -74,6 +72,22 @@ public:
         return rows;
     }
 
+    inline void Transpose() {
+
+        std::vector<MatrixRow<T>> transposed;
+        transposed.reserve(columns);
+
+        for (size_t j = 0; j < columns; ++j) {
+            MatrixRow<T> new_row(rows);
+            for (size_t i = 0; i < rows; ++i) {
+                new_row[i] = matrix[i][j];
+            }
+            transposed.emplace_back(std::move(new_row));
+        }
+
+        matrix = std::move(transposed);
+        std::swap(rows, columns);
+    }
 
 private:
     std::vector<MatrixRow<T>> matrix;
