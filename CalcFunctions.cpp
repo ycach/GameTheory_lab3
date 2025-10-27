@@ -119,14 +119,3 @@ std::pair<std::vector<double>, double> CalcFunc::SolveGame2x2(Matrix<double> &ma
     return std::pair<std::vector<double>, double>(std::vector<double>({p1, p2, q1, q2}), nu);
 }
 
-double CalcFunc::GetNu(std::pair<std::vector<double>, double> solve){
-    return solve.second;
-}
-
-std::pair<double, double> CalcFunc::GetX_star(std::pair<std::vector<double>, double> solve){
-    return std::pair<double, double>(solve.first[0], solve.first[1]);
-
-}
-std::pair<double, double> CalcFunc::GetY_star(std::pair<std::vector<double>, double> solve){
-    return std::pair<double, double>(solve.first[2], solve.first[3]);
-}

@@ -39,9 +39,7 @@ Point GetOptium(CalcFunc::Optium optium, std::vector<double> envelope, CalcFunc:
 
 double Acrosing2x2(Matrix<double> &matrix);
 std::pair<std::vector<double>, double> SolveGame2x2(Matrix<double> &matrix, double det);
-double GetNu(std::pair<std::vector<double>, double> solve);
-std::pair<double, double> GetX_star(std::pair<std::vector<double>, double> solve);
-std::pair<double, double> GetY_star(std::pair<std::vector<double>, double> solve);
+
 
 
 }
