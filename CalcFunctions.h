@@ -36,11 +36,5 @@ std::vector<std::pair<double, double>> GetEquationCoefficients(Matrix<double> &d
 std::vector<double> GetLowerEnvelope(Matrix<double> &data, X_Points_Dense points);
 std::vector<double> GetUpperEnvelope(Matrix<double> &data, X_Points_Dense points);
 Point GetOptium(CalcFunc::Optium optium, std::vector<double> envelope, CalcFunc::X_Points_Dense points);
-
-double Acrosing2x2(Matrix<double> &matrix);
-std::pair<std::vector<double>, double> SolveGame2x2(Matrix<double> &matrix, double det);
-
-
-
 }
 #endif // CALCFUNCTIONS_H

@@ -98,24 +98,3 @@ CalcFunc::Point CalcFunc::GetOptium(CalcFunc::Optium optium, std::vector<double>
 
 }
 
-double CalcFunc::Acrosing2x2(Matrix<double> &matrix){
-    if(matrix.GetColumnsCount() != 2 && matrix.GetRowsCount() != 2){
-        return 0.0;
-    }
-
-    return (matrix[0][0]+ matrix[1][1]) - (matrix[0][1]+matrix[1][0]);
-}
-
-std::pair<std::vector<double>, double> CalcFunc::SolveGame2x2(Matrix<double> &matrix, double det){
-
-    double p1 = (matrix[1][1] - matrix[1][0]) / det;
-    double p2 = 1.0 - p1;
-
-    double q1 =  (matrix[1][1] - matrix[0][1]) / det;
-    double q2 = 1.0 - q1;
-
-    double nu = (matrix[0][0] * matrix[1][1] - matrix[0][1] * matrix[1][0]) / det;
-
-    return std::pair<std::vector<double>, double>(std::vector<double>({p1, p2, q1, q2}), nu);
-}
-
