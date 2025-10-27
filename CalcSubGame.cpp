@@ -25,14 +25,6 @@ void CalcSubGame::Calculate(){
     Matrix<double> data = table_data->GetData();
     if(!lock){
         CalcFunc::X_Points_Dense points = CalcFunc::X_Points_Dense();
-
-        /*double acrossing = CalcFunc::Acrosing2x2(data);
-
-        if(acrossing < CalcFunc::ACCURACY){
-             CastomRecord* new_record = new CastomRecord(
-                "ошибка результатов", result_window);
-            result_window->AddRecord(new_record);
-        }else{*/
             ScheduleGame* game_schedule = new ScheduleGame("Подигра игра");
             std::vector<double> upper_envelope = CalcFunc::GetUpperEnvelope(data, points);
             CalcFunc::Point optium_point_game = CalcFunc::GetOptium(CalcFunc::Optium::Upper, upper_envelope,  points);
@@ -47,8 +39,6 @@ void CalcSubGame::Calculate(){
                 );
 
             result_window->AddRecord(new_record);
-
-        //}
     }
     lock = false;
 }
